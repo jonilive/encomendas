@@ -6,13 +6,19 @@ if ($mysqli->connect_errno) {
     die();
 }
 
-$res = mysqli_query($mysqli, "SELECT * FROM utilizadores");
-if (!$res) {
-    echo "Failed to run query: (" . $mysqli->errno . ") " . $mysqli->error;
-}
 
-if ($row = $res->fetch_assoc()) {
-    echo "| ".$row['nome']." | ".$row['passe']." <br>";
+function verificarLogin($user,$pass){
+    global $mysqli;
+
+    $consulta = mysqli_query($mysqli, "SELECT * FROM utilizadores WHERE nome='".$user."' AND passe='".$pass."' ");
+
+    if($consulta->num_rows > 0){
+        return true;
+    }else{
+        return false;
+    }
+
+
 }
 
 ?>
