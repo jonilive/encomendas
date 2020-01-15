@@ -1,5 +1,7 @@
 <?php
 session_start();
+include 'sql.inc.php';
+
 
 $_SESSION['loggedin'] = array();
 
@@ -7,7 +9,7 @@ $_SESSION['loggedin'] = array();
 if(!empty($_SESSION['loggedin'])){
 
 }else{
-    header('Location: login.php');
+    include 'login.php';
 }
 
 

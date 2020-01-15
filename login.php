@@ -1,3 +1,18 @@
+<?php 
+
+if($_POST){
+    
+
+    if($_POST['inputUserencomendas'] == "root" && $_POST['inputPalavrapassencomendas'] == "vermelho"){
+        $formMsg = "Sucesso!";
+    }else{
+        $formMsg = "Dados incorretos!";
+    }
+
+    
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -88,7 +103,7 @@
 
 <body class="text-center">
     <form class="form-signin" action="" method="POST">
-        <div class="mb-5"><?php var_dump($_POST); ?></div>
+        <div class="mb-5"><?php echo isset($formMsg) ? $formMsg : ""; ?></div>
         <h1 class="h3 mb-1 font-weight-normal">Encomendas</h1>
         <h4 class="h4 mb-5 font-weight-light">Inicie sessão</h2>
         <label for="inputUserencomendas" class="sr-only">Nome de utilizador</label>
