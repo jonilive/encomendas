@@ -13,7 +13,7 @@ function verificarLogin($user,$pass){
     $consulta = mysqli_query($mysqli, "SELECT * FROM utilizadores WHERE nome='".$user."' AND passe='".$pass."' ");
 
     if($consulta->num_rows > 0){
-        return true;
+        return $consulta->fetch_assoc();
     }else{
         return false;
     }

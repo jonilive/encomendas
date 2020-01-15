@@ -2,8 +2,9 @@
 
 if($_POST){
     
-
     if(verificarLogin($_POST['inputUserencomendas'], $_POST['inputPalavrapassencomendas'])){
+
+        $_SESSION['loggedin'] = verificarLogin($_POST['inputUserencomendas'], $_POST['inputPalavrapassencomendas']);
         $formMsg = "Sucesso!";
     }else{
         $formMsg = "Dados incorretos!";
