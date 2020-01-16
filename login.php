@@ -6,8 +6,14 @@ if($_POST){
 
         $_SESSION['loggedin'] = verificarLogin($_POST['inputUserencomendas'], $_POST['inputPalavrapassencomendas']);
         $formMsg = "Sucesso!";
+        $formMsg = '<div class="alert alert-success" role="alert">
+        Sucesso! A redirecionar...
+        </div>
+        <meta http-equiv="refresh" content="1;url=./" />';
     }else{
-        $formMsg = "Dados incorretos!";
+        $formMsg = '<div class="alert alert-danger" role="alert">
+        Dados incorretos!
+        </div>';
     }
 
     
@@ -98,8 +104,6 @@ if($_POST){
             border-top-right-radius: 0;
         }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
 </head>
 
 <body class="text-center">
