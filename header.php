@@ -10,7 +10,10 @@
     <title><?php echo $SYSTEM_NAME;?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo $SYSTEM_URL;?>css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/fontawesome.min.css">
+    <link rel="stylesheet" href="DataTables/datatables.min.css"/>
+
 
     <!-- Favicons -->
 
@@ -33,7 +36,6 @@
 
         /* Show it is fixed to the top */
         body {
-            min-height: 75rem;
             padding-top: 4.5rem;
         }
     </style>
@@ -48,13 +50,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<?php echo $SYSTEM_URL;?>">Encomendas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="<?php echo $SYSTEM_URL;?>nova">Nova encomenda</a>
                 </li>
             </ul>
             <div class="form-inline mt-2 mt-md-0">

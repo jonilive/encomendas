@@ -4,6 +4,7 @@ include 'sql.inc.php';
 
 $SYSTEM_NAME = "Gestão de encomendas";
 $SYSTEM_URL = "http://192.168.1.138/encomendas/";
+$SYSTEM_SCRIPTS = "";
 
 $_SESSION['loggedin'] = !isset($_SESSION['loggedin']) ? array() : $_SESSION['loggedin'];
 
