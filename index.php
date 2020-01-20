@@ -6,6 +6,7 @@ $SYSTEM_NAME = "Gestão de encomendas";
 $SYSTEM_URL = "http://192.168.1.138/encomendas/";
 $SYSTEM_ACTIVEURL = "home";
 $SYSTEM_SCRIPTS = "";
+$FORM_MESSAGE = "";
 
 $_SESSION['loggedin'] = !isset($_SESSION['loggedin']) ? array() : $_SESSION['loggedin'];
 
