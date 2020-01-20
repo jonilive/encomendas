@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/fontawesome.min.css">
-    <link rel="stylesheet" href="DataTables/datatables.min.css"/>
+    <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>DataTables/datatables.min.css"/>
 
 
     <!-- Favicons -->
@@ -49,11 +49,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item <?php echo $SYSTEM_ACTIVEURL == "home" ? "active" : "";?>">
                     <a class="nav-link" href="<?php echo $SYSTEM_URL;?>">Encomendas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $SYSTEM_URL;?>nova">Nova encomenda</a>
+                <li class="nav-item <?php echo $SYSTEM_ACTIVEURL == "nova" ? "active" : "";?>">
+                    <a class="nav-link" href="<?php echo $SYSTEM_URL;?>?nova">Nova encomenda</a>
                 </li>
             </ul>
             <div class="form-inline mt-2 mt-md-0">

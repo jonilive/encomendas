@@ -4,6 +4,7 @@ include 'sql.inc.php';
 
 $SYSTEM_NAME = "Gestão de encomendas";
 $SYSTEM_URL = "http://192.168.1.138/encomendas/";
+$SYSTEM_ACTIVEURL = "home";
 $SYSTEM_SCRIPTS = "";
 
 $_SESSION['loggedin'] = !isset($_SESSION['loggedin']) ? array() : $_SESSION['loggedin'];
@@ -14,8 +15,9 @@ if (!empty($_SESSION['loggedin'])) {
 
     foreach ($_GET as $webpages => $webpages_val) {
         switch ($webpages) {
-            case 'profile':
-                include 'profile.php';
+            case 'nova':
+                $SYSTEM_ACTIVEURL = "nova";
+                include 'nova.php';
                 break;
             case 'team':
                 include 'team.php';

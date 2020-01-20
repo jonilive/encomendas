@@ -5,6 +5,7 @@ if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
     die();
 }
+$mysqli->set_charset("utf8");
 
 
 function verificarLogin($user,$pass){
@@ -20,5 +21,20 @@ function verificarLogin($user,$pass){
 
 
 }
+
+function getFornecedores(){
+    global $mysqli;
+
+    $consulta = mysqli_query($mysqli, "SELECT * FROM fornecedores ");
+
+    if($consulta->num_rows > 0){
+        return $consulta->fetch_all();
+    }else{
+        return false;
+    }
+
+
+}
+
 
 ?>
