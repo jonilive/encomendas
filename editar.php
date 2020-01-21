@@ -5,8 +5,6 @@ $encomenda = getEncomenda($_GET['editar']);
 
 if ($_POST) {
 
-
-
     $update = editEncomenda(
         $encomenda['id'],
         $_POST['fFornecedor'],
@@ -23,7 +21,7 @@ if ($_POST) {
     if ($update === true) {
         $FORM_MESSAGE = '<div class="alert alert-success">Alterações guardadas com sucesso!</div>';
     } else {
-        $FORM_MESSAGE = '<div class="alert alert-danger">Ocorreu um erro ao editar a encomenda.<br>' . $inserir . '</div>';
+        $FORM_MESSAGE = '<div class="alert alert-danger">Ocorreu um erro ao editar a encomenda.<br>' . $update . '</div>';
     }
 
     $encomenda = getEncomenda($_GET['editar']);

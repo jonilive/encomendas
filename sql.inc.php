@@ -104,8 +104,8 @@ function editEncomenda($id, $fornecedor, $utilizador, $produto, $quantidade, $qu
     `id_fornecedor` = '$fornecedor',
     `quantidade` = '$quantidade',
     `quantidade_type` = '$quantidadeTipo',
-    `data_pedido` = '$data_pedido',
-    `data_prevista` = '$data_prev',
+    `data_pedido` = ".(empty($data_pedido)?"NULL":"'$data_pedido'").",
+    `data_prevista` = ".(empty($data_prev)?"NULL":"'$data_prev'").",
     `obs` = '$obs'
     WHERE `pedidos`.`id` = $id ");
 
