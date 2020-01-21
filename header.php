@@ -52,6 +52,13 @@
                 <li class="nav-item <?php echo $SYSTEM_ACTIVEURL == "nova" ? "active" : "";?>">
                     <a class="nav-link" href="<?php echo $SYSTEM_URL;?>?nova">Nova encomenda</a>
                 </li>
+                <?php if($_SESSION['loggedin']['nivel'] < 2){ ?>
+
+                <li class="nav-item <?php echo $SYSTEM_ACTIVEURL == "fornecedores" ? "active" : "";?>">
+                    <a class="nav-link" href="<?php echo $SYSTEM_URL;?>?fornecedores">Fornecedores</a>
+                </li>
+
+                <?php } ?>
             </ul>
             <div class="form-inline mt-2 mt-md-0">
                 <span class="mr-sm-2 text-secondary">Olá <?php echo $_SESSION['loggedin']['nome'];?>, </span>

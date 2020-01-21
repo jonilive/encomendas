@@ -32,7 +32,7 @@ if($_POST){
     <title>Inicio de sessão - <?php echo $SYSTEM_NAME;?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Favicons -->
     <meta name="theme-color" content="#563d7c">

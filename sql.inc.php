@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli("localhost", "site", "vermelho", "encomendas", "3307");
+$mysqli = new mysqli($SYSTEM_MYSQL[0], $SYSTEM_MYSQL[1], $SYSTEM_MYSQL[2], $SYSTEM_MYSQL[3], $SYSTEM_MYSQL[4]);
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
     die();

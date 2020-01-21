@@ -1,13 +1,20 @@
 <?php
 session_start();
-include 'sql.inc.php';
 
 $SYSTEM_NAME = "Gestão de encomendas";
 $SYSTEM_URL = "http://192.168.1.138/encomendas/";
+$SYSTEM_MYSQL = array(
+    "localhost",
+    "site",
+    "vermelho",
+    "encomendas",
+    "3307"
+);
 $SYSTEM_ACTIVEURL = "home";
 $SYSTEM_SCRIPTS = "";
 $FORM_MESSAGE = "";
 
+include 'sql.inc.php';
 $_SESSION['loggedin'] = !isset($_SESSION['loggedin']) ? array() : $_SESSION['loggedin'];
 
 if (!empty($_SESSION['loggedin'])) {
@@ -25,6 +32,10 @@ if (!empty($_SESSION['loggedin'])) {
                 break;
             case 'apagarencomenda':
                 include 'apagarencomenda.php';
+                break;
+            case 'fornecedores':
+                $SYSTEM_ACTIVEURL = "fornecedores";
+                include 'fornecedores.php';
                 break;
             case 'logout':
                 include 'logout.php';
