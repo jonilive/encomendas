@@ -40,11 +40,11 @@ $(document).ready(function() {
                 foreach(getEncomendas() as $encomenda){
 
                     $estadoPedido = empty($encomenda[7])?'<span class="text-danger">Por pedir</span>':'<span class="text-info">Pedido em '.$encomenda[7].'</span>';
-                    $previsao = empty($encomenda[8])?'':'<span class="text-success">Previsão de entrega em '.$encomenda[8].'</span>';
+                    $previsao = empty($encomenda[8])?'':' | <span class="text-success">Prev. entrega em '.$encomenda[8].'</span>';
                     echo '<tr style="cursor: pointer;" onclick="window.location.href=\''.$SYSTEM_URL.'?editar='.$encomenda[0].'\' ">';
                     echo '<td>'.$encomenda[0].'</td>';
                     echo '<td><b>'.$encomenda[3].'</b><br><small>'.$encomenda[4].' '.$encomenda[5].' | '.id2Fornecedor($encomenda[1]).'</small></td>';
-                    echo '<td><small>'.$encomenda[6].'<br>'.$estadoPedido.'<br>'.$previsao.'</small></td>';
+                    echo '<td><small>'.$encomenda[6].'<br>'.$estadoPedido.''.$previsao.'</small></td>';
                     echo '</tr>';
                 }
                 ?>

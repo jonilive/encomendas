@@ -53,7 +53,7 @@ function delEncomenda($id){
 function getFornecedores(){
     global $mysqli;
 
-    $consulta = mysqli_query($mysqli, "SELECT * FROM fornecedores ");
+    $consulta = mysqli_query($mysqli, "SELECT * FROM fornecedores ORDER BY fornecedor ASC");
 
     if($consulta->num_rows > 0){
         return $consulta->fetch_all();
