@@ -27,24 +27,24 @@ $(document).ready(function() {
     <hr>
 
     <div class="tabela">
-        <table id="tabelaencomendas" class="display table table-striped" style="width:100%;display:none">
+        <table id="tabelaencomendas" class="display table table-striped table-bordered table-hover" style="width:100%;display:none">
             <thead>
                 <tr>
-                    <th>Encomenda</th>
+                    <th style="width:30px">#</th>
                     <th>Produto</th>
                     <th>Registo/Pedido</th>
-                    <th>Estado</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 foreach(getEncomendas() as $encomenda){
 
-                    echo '<tr>';
+                    $estadoPedido = empty($encomenda[7])?'<span class="text-danger">Por pedir</span>':'<span class="text-info">Pedido em '.$encomenda[7].'</span>';
+                    $previsao = empty($encomenda[8])?'':'<span class="text-success">Previsão de entrega em '.$encomenda[8].'</span>';
+                    echo '<tr style="cursor: pointer;" onclick="window.location.href=\''.$SYSTEM_URL.'?editar='.$encomenda[0].'\' ">';
                     echo '<td>'.$encomenda[0].'</td>';
                     echo '<td><b>'.$encomenda[3].'</b><br><small>'.$encomenda[4].' '.$encomenda[5].' | '.id2Fornecedor($encomenda[1]).'</small></td>';
-                    echo '<td>'.$encomenda[6].'</td>';
-                    echo '<td>'.$encomenda[8].'</td>';
+                    echo '<td><small>'.$encomenda[6].'<br>'.$estadoPedido.'<br>'.$previsao.'</small></td>';
                     echo '</tr>';
                 }
                 ?>

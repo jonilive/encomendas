@@ -13,10 +13,7 @@
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/fontawesome.min.css">
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>DataTables/datatables.min.css"/>
-
-
-    <!-- Favicons -->
-
+    <link rel="icon" href="<?php echo $SYSTEM_URL;?>favicon.ico" />
 
     <style>
         .bd-placeholder-img {

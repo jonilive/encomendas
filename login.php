@@ -36,6 +36,7 @@ if($_POST){
 
     <!-- Favicons -->
     <meta name="theme-color" content="#563d7c">
+    <link rel="icon" href="<?php echo $SYSTEM_URL;?>favicon.ico" />
 
 
     <style>

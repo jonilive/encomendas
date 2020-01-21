@@ -20,8 +20,11 @@ if (!empty($_SESSION['loggedin'])) {
                 $SYSTEM_ACTIVEURL = "nova";
                 include 'nova.php';
                 break;
-            case 'team':
-                include 'team.php';
+            case 'editar':
+                include 'editar.php';
+                break;
+            case 'apagarencomenda':
+                include 'apagarencomenda.php';
                 break;
             case 'logout':
                 include 'logout.php';

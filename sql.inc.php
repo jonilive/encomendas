@@ -22,6 +22,34 @@ function verificarLogin($user,$pass){
 
 }
 
+function getUser($id){
+    global $mysqli;
+
+    $consulta = mysqli_query($mysqli, "SELECT * FROM utilizadores WHERE id=$id ");
+
+    if($consulta->num_rows > 0){
+        return $consulta->fetch_assoc()['nome'];
+    }else{
+        return "";
+    }
+
+
+}
+
+function delEncomenda($id){
+    global $mysqli;
+
+    $delete = mysqli_query($mysqli, "DELETE FROM `pedidos` WHERE `pedidos`.`id` = $id ");
+
+    if($delete){
+        return true;
+    }else{
+        return ("Error: ".$mysqli->error);
+    }
+
+
+}
+
 function getFornecedores(){
     global $mysqli;
 
@@ -68,6 +96,30 @@ function insEncomenda($fornecedor, $utilizador, $produto, $quantidade, $quantida
 
 }
 
+function editEncomenda($id, $fornecedor, $utilizador, $produto, $quantidade, $quantidadeTipo, $data_registo, $data_pedido, $data_prev, $obs){
+    global $mysqli;
+
+    $update = mysqli_query($mysqli, "UPDATE `pedidos` 
+    SET `pedido` = '$produto',
+    `id_fornecedor` = '$fornecedor',
+    `quantidade` = '$quantidade',
+    `quantidade_type` = '$quantidadeTipo',
+    `data_pedido` = '$data_pedido',
+    `data_prevista` = '$data_prev',
+    `obs` = '$obs'
+    WHERE `pedidos`.`id` = $id ");
+
+    if($update){
+        return true;
+    }else{
+        return ("Error: ".$mysqli->error);
+    }
+
+
+}
+
+
+
 function id2Fornecedor($id){
     global $mysqli;
 
@@ -77,6 +129,20 @@ function id2Fornecedor($id){
         return $consulta->fetch_assoc()['fornecedor'];
     }else{
         return "";
+    }
+
+
+}
+
+function getEncomenda($id){
+    global $mysqli;
+
+    $consulta = mysqli_query($mysqli, "SELECT * FROM pedidos WHERE id=".$id." ");
+
+    if($consulta->num_rows > 0){
+        return $consulta->fetch_assoc();
+    }else{
+        return array();
     }
 
 
