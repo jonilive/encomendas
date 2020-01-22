@@ -38,6 +38,10 @@ if (!empty($_SESSION['loggedin'])) {
                 $SYSTEM_ACTIVEURL = "fornecedores";
                 include 'fornecedores.php';
                 break;
+            case 'listafornecedores':
+                $SYSTEM_ACTIVEURL = "outros";
+                include 'listafornecedores.php';
+                break;
             case 'apagarfornecedor':
                 include 'apagarfornecedor.php';
                 break;

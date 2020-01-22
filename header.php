@@ -52,6 +52,12 @@
                 <li class="nav-item <?php echo $SYSTEM_ACTIVEURL == "nova" ? "active" : "";?>">
                     <a class="nav-link" href="<?php echo $SYSTEM_URL;?>?nova">Nova encomenda</a>
                 </li>
+                <li class="nav-item dropdown <?php echo $SYSTEM_ACTIVEURL == "outros" ? "active" : ""; ?>">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Outras ações</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="<?php echo $SYSTEM_URL; ?>?listafornecedores">Criar listagem para fornecedor</a>
+                    </div>
+                </li>
                 <?php if($_SESSION['loggedin']['nivel'] < 2){ ?>
 
                 <li class="nav-item <?php echo $SYSTEM_ACTIVEURL == "fornecedores" ? "active" : "";?>">

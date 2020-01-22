@@ -100,6 +100,20 @@ function getEncomendas(){
 
 }
 
+function getEncomendasForn($id){
+    global $mysqli;
+
+    $consulta = mysqli_query($mysqli, "SELECT * FROM pedidos WHERE id_fornecedor = $id");
+
+    if($consulta->num_rows > 0){
+        return $consulta->fetch_all();
+    }else{
+        return array();
+    }
+
+
+}
+
 
 function insEncomenda($fornecedor, $utilizador, $produto, $quantidade, $quantidadeTipo, $data_registo, $data_pedido, $data_prev, $obs){
     global $mysqli;
