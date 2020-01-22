@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   `data_pedido` date NULL,
   `data_prevista` date NULL,
   `obs` varchar(1024) NOT NULL,
+  `entrou` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `fornecedores` (`id_fornecedor`),
   KEY `utilizadores` (`id_utilizador`)

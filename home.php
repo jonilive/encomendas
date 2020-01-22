@@ -21,8 +21,25 @@ $(document).ready(function() {
 ?>
 <main role="main" class="container">
 
-    <div class="mt-3">
-        <h1>Encomendas</h1>
+<div class="row">
+        <div class="col mt-3">
+            <?php echo $FORM_MESSAGE; ?>
+            <form id="fornecedorform">
+                <div class="form-row">
+                    <div class="col">
+                        <h2>Encomendas</h2>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-control form-control-lg" id="fornecedorSelect">
+                            <option value="todas">Mostrar todas as encomendas</option>
+                            <option value="porpedir">Mostrar encomendas por pedir</option>
+                            <option value="pedidas">Mostrar encomendas pedidas</option>
+                            <option value="jaconcluidas">Mostrar encomendas já concluidas</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     <hr>
 
