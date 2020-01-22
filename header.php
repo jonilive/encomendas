@@ -40,7 +40,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="./"><?php echo $SYSTEM_NAME;?></a>
+        <a class="navbar-brand" href="./"><ion-icon name="cube"></ion-icon> <?php echo $SYSTEM_NAME;?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

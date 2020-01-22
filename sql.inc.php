@@ -36,10 +36,32 @@ function getUser($id){
 
 }
 
+function countFornecedores($id){
+    global $mysqli;
+
+    $consulta = mysqli_query($mysqli, "SELECT * FROM pedidos WHERE id_fornecedor=$id ");
+
+    return $consulta->num_rows;
+}
+
 function delEncomenda($id){
     global $mysqli;
 
     $delete = mysqli_query($mysqli, "DELETE FROM `pedidos` WHERE `pedidos`.`id` = $id ");
+
+    if($delete){
+        return true;
+    }else{
+        return ("Error: ".$mysqli->error);
+    }
+
+
+}
+
+function delFornecedor($id){
+    global $mysqli;
+
+    $delete = mysqli_query($mysqli, "DELETE FROM `fornecedores` WHERE `fornecedores`.`id` = $id ");
 
     if($delete){
         return true;
@@ -143,6 +165,21 @@ function getEncomenda($id){
         return $consulta->fetch_assoc();
     }else{
         return array();
+    }
+
+
+}
+
+
+function insFornecedor($fornecedor){
+    global $mysqli;
+
+    $insert = mysqli_query($mysqli, "INSERT INTO fornecedores (fornecedor) VALUES ('$fornecedor') ");
+
+    if($insert){
+        return true;
+    }else{
+        return ("Error: ".$mysqli->error);
     }
 
 

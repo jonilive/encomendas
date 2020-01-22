@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_ENCODED);
 
 $SYSTEM_NAME = "Gestão de encomendas";
 $SYSTEM_URL = "http://192.168.1.138/encomendas/";
@@ -36,6 +37,9 @@ if (!empty($_SESSION['loggedin'])) {
             case 'fornecedores':
                 $SYSTEM_ACTIVEURL = "fornecedores";
                 include 'fornecedores.php';
+                break;
+            case 'apagarfornecedor':
+                include 'apagarfornecedor.php';
                 break;
             case 'logout':
                 include 'logout.php';
