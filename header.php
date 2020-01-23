@@ -11,7 +11,6 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/fontawesome.min.css">
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>lib/DataTables/datatables.min.css"/>
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>lib/fontawesome-free-5.12.0-web/css/all.css"/>
     <link rel="icon" href="<?php echo $SYSTEM_URL;?>favicon.ico" />

@@ -7,7 +7,7 @@ $(document).ready(function() {
     $(\'#tabelaencomendas\').DataTable({
         "order": [[ 0, "desc" ]],
         "language": {
-            "url": "DataTables/Portuguese.json"
+            "url": "lib/DataTables/Portuguese.json"
         },
         "fnInitComplete":function(){
             $(\'#tabelaencomendas\').show();

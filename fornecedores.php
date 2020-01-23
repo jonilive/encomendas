@@ -19,7 +19,7 @@ $(document).ready(function() {
     $(\'#tabelafornecedores\').DataTable({
         "order": [[ 0, "desc" ]],
         "language": {
-            "url": "DataTables/Portuguese.json"
+            "url": "lib/DataTables/Portuguese.json"
         },
         "fnInitComplete":function(){
             $(\'#tabelafornecedores\').show();
