@@ -100,10 +100,11 @@ function getEncomendas(){
 
 }
 
-function getEncomendasForn($id){
+function getEncomendasForn($id, $soporpedir = false){
     global $mysqli;
 
-    $consulta = mysqli_query($mysqli, "SELECT * FROM pedidos WHERE id_fornecedor = $id");
+    $where = $soporpedir ?" AND data_pedido IS NULL":"";
+    $consulta = mysqli_query($mysqli, "SELECT * FROM pedidos WHERE id_fornecedor = $id $where");
 
     if($consulta->num_rows > 0){
         return $consulta->fetch_all();
@@ -154,6 +155,22 @@ function editEncomenda($id, $fornecedor, $utilizador, $produto, $quantidade, $qu
 
 }
 
+function setEncomendaPedida($id_fornecedor){
+    global $mysqli;
+    $data_pedido = date("Y-m-d", time());
+
+    $update = mysqli_query($mysqli, "UPDATE `pedidos` 
+    SET `data_pedido` = '$data_pedido'
+    WHERE `pedidos`.`id_fornecedor` = $id_fornecedor ");
+
+    if($update){
+        return true;
+    }else{
+        return ("Error: ".$mysqli->error);
+    }
+
+
+}
 
 
 function id2Fornecedor($id){

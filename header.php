@@ -12,7 +12,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>css/fontawesome.min.css">
-    <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>DataTables/datatables.min.css"/>
+    <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>lib/DataTables/datatables.min.css"/>
+    <link rel="stylesheet" href="<?php echo $SYSTEM_URL;?>lib/fontawesome-free-5.12.0-web/css/all.css"/>
     <link rel="icon" href="<?php echo $SYSTEM_URL;?>favicon.ico" />
 
     <style>
@@ -40,7 +41,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="./"><ion-icon name="cube"></ion-icon> <?php echo $SYSTEM_NAME;?></a>
+        <a class="navbar-brand" href="./"><i class="fas fa-cubes"></i> <?php echo $SYSTEM_NAME;?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,7 +70,7 @@
             </ul>
             <div class="form-inline mt-2 mt-md-0">
                 <span class="mr-sm-2 text-secondary">Olá <?php echo $_SESSION['loggedin']['nome'];?>, </span>
-                <a class="btn btn-outline-warning my-2 my-sm-0 text-warning" href="<?php echo $SYSTEM_URL;?>?logout">Sair</a>
+                <a class="btn btn-outline-danger my-2 my-sm-0 text-danger" href="<?php echo $SYSTEM_URL;?>?logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
             </div>
         </div>
     </nav>

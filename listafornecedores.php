@@ -14,6 +14,17 @@ $(document).ready(function() {
 </script>
 ';
 
+if($_POST){
+    
+    $update = setEncomendaPedida($_POST['fornecedor']);
+    if ($update === true) {
+        $FORM_MESSAGE = '<div class="alert alert-success">Encomenda marcada como pedida</div>';
+    } else {
+        $FORM_MESSAGE = '<div class="alert alert-danger">Ocorreu um erro ao concluir esta encomenda.<br>' . $update . '</div>';
+    }
+}
+
+
 ?>
 <main role="main" class="container">
 
@@ -26,7 +37,7 @@ $(document).ready(function() {
                         <h2>Listagem para fornecedor</h2>
                     </div>
                     <div class="col">
-                        <select class="form-control form-control-lg" id="fornecedorSelect">
+                        <select class="form-control form-control-lg" id="fornecedorSelect" autofocus>
                             <?php foreach(getFornecedores() as $fornecedor){
                                 $opselected = ($fornecedor[0]==$fornecedoratual)?"selected":"";
                                 echo '<option value="'.$fornecedor[0].'" '.$opselected.'>'.$fornecedor[1].'</option>';
@@ -38,11 +49,21 @@ $(document).ready(function() {
             </form>
             <hr>
             <ul>
-                <?php foreach(getEncomendasForn($fornecedoratual) as $encomenda){
+                <?php foreach(getEncomendasForn($fornecedoratual, true) as $encomenda){
                     echo '<li>'.$encomenda[4].$encomenda[5].' ...... '.$encomenda[3].'</li>';
                 }
                 ?>
             </ul>
+        </div>
+    </div>
+    <div class="row d-print-none">
+        <div class="col">
+            <hr>
+            <form action="" method="POST">
+                <input type="hidden" name="fornecedor" value="<?php echo $fornecedoratual;?>" />
+                <input type="submit" value="Fiz agora esta encomenda" class="btn btn-primary" onclick="return confirm('Deseja mesmo marcar esta encomenda como pedida?\nESTA AÇÃO DÁ MUITO TRABALHO A DESFAZER!!!');" />
+                <button class="btn btn-info" onclick="window.print();return false;"><i class="fas fa-print"></i> Imprimir encomenda</button>
+            </form>
         </div>
     </div>
 
