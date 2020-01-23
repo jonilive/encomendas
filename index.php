@@ -15,7 +15,7 @@ $SYSTEM_ACTIVEURL = "home";
 $SYSTEM_SCRIPTS = "";
 $FORM_MESSAGE = "";
 
-include 'sql.inc.php';
+include 'inc/sql.inc.php';
 $_SESSION['loggedin'] = !isset($_SESSION['loggedin']) ? array() : $_SESSION['loggedin'];
 
 if (!empty($_SESSION['loggedin'])) {
@@ -26,37 +26,37 @@ if (!empty($_SESSION['loggedin'])) {
         switch ($webpages) {
             case 'nova':
                 $SYSTEM_ACTIVEURL = "nova";
-                include 'nova.php';
+                include 'inc/nova.php';
                 break;
             case 'editar':
-                include 'editar.php';
+                include 'inc/editar.php';
                 break;
             case 'apagarencomenda':
-                include 'apagarencomenda.php';
+                include 'inc/apagarencomenda.php';
                 break;
             case 'fornecedores':
                 $SYSTEM_ACTIVEURL = "fornecedores";
-                include 'fornecedores.php';
+                include 'inc/fornecedores.php';
                 break;
             case 'listafornecedores':
                 $SYSTEM_ACTIVEURL = "outros";
-                include 'listafornecedores.php';
+                include 'inc/listafornecedores.php';
                 break;
             case 'apagarfornecedor':
-                include 'apagarfornecedor.php';
+                include 'inc/apagarfornecedor.php';
                 break;
             case 'logout':
-                include 'logout.php';
+                include 'inc/logout.php';
                 break;
             default:
-                include '404.php';
+                include 'inc/404.php';
         }
     }
     if(!isset($webpages)){
-        include 'home.php';
+        include 'inc/home.php';
     }
     
 } else {
     //nao tem sessao
-    include 'login.php';
+    include 'inc/login.php';
 }

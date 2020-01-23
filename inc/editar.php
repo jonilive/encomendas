@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'inc/header.php';
 
 $encomenda = getEncomenda($_GET['editar']);
 

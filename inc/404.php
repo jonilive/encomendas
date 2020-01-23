@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'inc/header.php';
 
 ?>
 <main role="main" class="container">

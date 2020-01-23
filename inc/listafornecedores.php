@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'inc/header.php';
 
 $fornecedoratual = !empty($_GET['listafornecedores'])?$_GET['listafornecedores']:getFornecedores()[0][0];
 $SYSTEM_SCRIPTS = '
