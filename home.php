@@ -13,6 +13,14 @@ $(document).ready(function() {
             $(\'#tabelaencomendas\').show();
         }
     });
+
+    $( "#tipoView" ).change(function() {
+        if($(this).val() == "todas"){ window.location.href = "'.$SYSTEM_URL.'"; }
+        if($(this).val() == "porpedir"){ window.location.href = "'.$SYSTEM_URL.'?porpedir"; }
+        if($(this).val() == "pedidas"){ window.location.href = "'.$SYSTEM_URL.'?pedidas"; }
+        if($(this).val() == "jaconcluidas"){ window.location.href = "'.$SYSTEM_URL.'?jaconcluidas"; }
+      });
+    
     
 } );
 </script>
@@ -30,7 +38,7 @@ $(document).ready(function() {
                         <h2>Encomendas</h2>
                     </div>
                     <div class="col-4">
-                        <select class="form-control form-control-lg" id="fornecedorSelect">
+                        <select class="form-control form-control-lg" id="tipoView">
                             <option value="todas">Mostrar todas as encomendas</option>
                             <option value="porpedir">Mostrar encomendas por pedir</option>
                             <option value="pedidas">Mostrar encomendas pedidas</option>
