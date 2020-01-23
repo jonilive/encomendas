@@ -31,10 +31,16 @@ if($_POST){
     <div class="row">
         <div class="col mt-3">
             <?php echo $FORM_MESSAGE; ?>
+            <div class="row d-none d-print-block">
+                <div class="col">
+                    <img src="<?php echo $SYSTEM_URL;?>print_header.jpg" style="height:3cm;" />
+                </div>
+                <hr>
+            </div>
             <form id="fornecedorform">
                 <div class="form-row">
                     <div class="col">
-                        <h2>Listagem para fornecedor</h2>
+                        <h2>Encomenda para fornecedor</h2>
                     </div>
                     <div class="col">
                         <select class="form-control form-control-lg" id="fornecedorSelect" autofocus>
