@@ -46,7 +46,8 @@ if($_POST){
                         <select class="form-control form-control-lg" id="fornecedorSelect" autofocus>
                             <?php foreach(getFornecedores() as $fornecedor){
                                 $opselected = ($fornecedor[0]==$fornecedoratual)?"selected":"";
-                                echo '<option value="'.$fornecedor[0].'" '.$opselected.'>'.$fornecedor[1].'</option>';
+                                $disabled = count(getEncomendasForn($fornecedor[0], true))==0?"disabled":"";
+                                echo '<option value="'.$fornecedor[0].'" '.$opselected.' '.$disabled.'>'.$fornecedor[1].' ('.count(getEncomendasForn($fornecedor[0], true)).')</option>';
                             }
                             ?>
                         </select>

@@ -45,6 +45,18 @@ if (!empty($_SESSION['loggedin'])) {
             case 'apagarfornecedor':
                 include 'inc/apagarfornecedor.php';
                 break;
+            case 'porpedir':
+                include 'inc/porpedir.php';
+                break;
+            case 'pedidas':
+                include 'inc/pedidas.php';
+                break;
+            case 'jaconcluidas':
+                include 'inc/jaconcluidas.php';
+                break;
+            case 'min':
+                include 'inc/min.php';
+                break;
             case 'logout':
                 include 'inc/logout.php';
                 break;
@@ -52,10 +64,9 @@ if (!empty($_SESSION['loggedin'])) {
                 include 'inc/404.php';
         }
     }
-    if(!isset($webpages)){
+    if (!isset($webpages)) {
         include 'inc/home.php';
     }
-    
 } else {
     //nao tem sessao
     include 'inc/login.php';

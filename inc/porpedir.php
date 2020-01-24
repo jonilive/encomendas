@@ -41,7 +41,7 @@ $(document).ready(function() {
                     <div class="col-4">
                         <select class="form-control form-control-lg" id="tipoView">
                             <option value="todas">Mostrar todas as encomendas</option>
-                            <option value="porpedir">Mostrar encomendas por pedir</option>
+                            <option value="porpedir" selected>Mostrar encomendas por pedir</option>
                             <option value="pedidas">Mostrar encomendas pedidas</option>
                             <option value="jaconcluidas">Mostrar encomendas já concluidas</option>
                             <option value="min">Mostrar vista minimizada</option>
@@ -64,7 +64,7 @@ $(document).ready(function() {
             </thead>
             <tbody>
                 <?php
-                foreach(getEncomendas() as $encomenda){
+                foreach(getEncomendas("porpedir") as $encomenda){
 
                     $estadoPedido = empty($encomenda[7])?'<span class="text-danger">Por pedir</span>':'<span class="text-info">Pedido em '.$encomenda[7].'</span>';
                     $previsao = empty($encomenda[8])?'':' | <span class="text-success">Prev. entrega em '.$encomenda[8].'</span>';

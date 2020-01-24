@@ -86,10 +86,15 @@ function getFornecedores(){
 
 }
 
-function getEncomendas(){
+function getEncomendas($modo = "default"){
     global $mysqli;
 
-    $consulta = mysqli_query($mysqli, "SELECT * FROM pedidos ");
+    $where = "WHERE entrou=0";
+    if($modo == "porpedir"){ $where = "WHERE data_pedido IS NULL AND entrou=0"; }
+    if($modo == "pedidas"){ $where = "WHERE data_pedido IS NOT NULL AND entrou=0"; }
+    if($modo == "jaconcluidas"){ $where = "WHERE entrou=1"; }
+
+    $consulta = mysqli_query($mysqli, "SELECT * FROM pedidos $where");
 
     if($consulta->num_rows > 0){
         return $consulta->fetch_all();

@@ -5,6 +5,7 @@ $SYSTEM_SCRIPTS = '
 <script>
 $(document).ready(function() {
     $(\'#tabelaencomendas\').DataTable({
+        "pageLength": 50,
         "order": [[ 0, "desc" ]],
         "language": {
             "url": "lib/DataTables/Portuguese.json"
@@ -44,7 +45,7 @@ $(document).ready(function() {
                             <option value="porpedir">Mostrar encomendas por pedir</option>
                             <option value="pedidas">Mostrar encomendas pedidas</option>
                             <option value="jaconcluidas">Mostrar encomendas já concluidas</option>
-                            <option value="min">Mostrar vista minimizada</option>
+                            <option value="min" selected>Mostrar vista minimizada</option>
                         </select>
                     </div>
                 </div>
@@ -70,8 +71,8 @@ $(document).ready(function() {
                     $previsao = empty($encomenda[8])?'':' | <span class="text-success">Prev. entrega em '.$encomenda[8].'</span>';
                     echo '<tr style="cursor: pointer;" onclick="window.location.href=\''.$SYSTEM_URL.'?editar='.$encomenda[0].'\' ">';
                     echo '<td>'.$encomenda[0].'</td>';
-                    echo '<td><b>'.$encomenda[3].'</b><br><small>'.$encomenda[4].' '.$encomenda[5].' | '.id2Fornecedor($encomenda[1]).'</small></td>';
-                    echo '<td><small>'.$encomenda[6].'<br>'.$estadoPedido.''.$previsao.'</small></td>';
+                    echo '<td>'.$encomenda[4].' '.$encomenda[5].' <b>'.$encomenda[3].'</b></td>';
+                    echo '<td>'.$estadoPedido.'</small></td>';
                     echo '</tr>';
                 }
                 ?>
