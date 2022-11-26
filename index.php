@@ -1,4 +1,5 @@
 <?php
+//test line
 session_start();
 $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_SANITIZE_ENCODED);
 
